@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+
+    static int utopianTree(int n) {
+        int height = 1;
+
+        for (int cycle = 1; cycle <= n; cycle++) {
+            if (cycle % 2 == 1) {   // Spring cycle
+                height = height * 2;
+            } else {               // Summer cycle
+                height = height + 1;
+            }
+        }
+        return height;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int t = sc.nextInt();  // number of test cases
+
+        for (int i = 0; i < t; i++) {
+            int n = sc.nextInt();  // number of growth cycles
+            System.out.println(utopianTree(n));
+        }
+
+        sc.close();
+    }
+}
+
